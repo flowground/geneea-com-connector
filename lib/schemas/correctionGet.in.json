@@ -1,0 +1,34 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": false,
+            "type": "string"
+        },
+        "text": {
+            "required": false,
+            "type": "string"
+        },
+        "url": {
+            "required": false,
+            "type": "string"
+        },
+        "extractor": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "default",
+                "article",
+                "keep-everything"
+            ]
+        },
+        "language": {
+            "required": false,
+            "type": "string"
+        },
+        "returnTextInfo": {
+            "required": false,
+            "type": "boolean"
+        }
+    }
+}

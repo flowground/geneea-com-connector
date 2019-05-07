@@ -1,0 +1,44 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "description": "Request encapsulation for simple API version 1",
+            "properties": {
+                "extractor": {
+                    "description": "[optional] Text extractor to be used when analyzing HTML document",
+                    "enum": [
+                        "default",
+                        "article",
+                        "keep-everything"
+                    ],
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Unique identifier of the document, it's optional",
+                    "type": "string"
+                },
+                "language": {
+                    "description": "[optional] The language of the document, auto-detection will be used if omitted",
+                    "type": "string"
+                },
+                "options": {
+                    "description": "[optional] Additional options for the internal modules (key-value pairs)",
+                    "type": "object"
+                },
+                "returnTextInfo": {
+                    "description": "[optional] Indicates whether to return the source text within the response object",
+                    "type": "boolean"
+                },
+                "text": {
+                    "description": "The raw text to be analyzed, mutually exclusive with the 'url' parameter",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "URL of a document to be analysed, mutually exclusive with the 'text' parameter",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
