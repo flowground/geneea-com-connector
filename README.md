@@ -5,12 +5,12 @@
 A generated **flow**ground connector for the Geneea Natural Language Processing API (version 1.0).
 
 Generated from: https://api.apis.guru/v2/specs/geneea.com/1.0/swagger.json<br/>
-Generated at: 2019-05-07T17:40:49+03:00
+Generated at: 2019-07-08T14:13:34+03:00
 
 ## API Description
 
 <div class="api-description">
-    <h2>Authentication</h2>
+    <h3>Authentication</h3>
     <p>For all calls, supply your API key. <a href="https://www.geneea.com/pricing">Sign up to <em>obtain the key</em></a>.</p>
     <p>
         Our API supports both <em>unencrypted (HTTP)</em> and <em>encrypted (HTTPS)</em> protocols.
@@ -19,7 +19,7 @@ Generated at: 2019-05-07T17:40:49+03:00
     <p>The API key should be supplied as either a request parameter <code>user_key</code> or in <code>Authorization</code> header.</p>
     <pre><code>Authorization: user_key &lt;YOUR_API_KEY&gt;</code></pre>
 
-    <h2>API operations</h2>
+    <h3>API operations</h3>
     <p>
         All API operations can perform analysis on supplied raw text or on text extracted from a given URL.
         Optionally, one can supply additional information which can make the result more precise. An example
@@ -44,10 +44,10 @@ Generated at: 2019-05-07T17:40:49+03:00
         </li>
     </ul>
 
-    <h2>Encoding</h2>
+    <h3>Encoding</h3>
     <p>The supplied text is expected to be in UTF-8 encoding, this is especially important for non-english texts.</p>
 
-    <h2>Returned values</h2>
+    <h3>Returned values</h3>
     <p>The API calls always return objects in serialized JSON format in UTF-8 encoding.</p>
     <p>
         If any error occurs, the HTTP response code will be in the range <code>4xx</code> (client-side error) or
@@ -55,7 +55,7 @@ Generated at: 2019-05-07T17:40:49+03:00
         about the error in JSON format, with <code>exception</code> and <code>message</code> values.
     </p>
 
-    <h2>URL limitations</h2>
+    <h3>URL limitations</h3>
     <p>
         All the requests are semantically <code>GET</code>. However, for longer texts, you may run into issues
         with URL length limit. Therefore, it's possible to always issue a <code>POST</code> request with all
@@ -70,27 +70,26 @@ Generated at: 2019-05-07T17:40:49+03:00
     </code></pre>
     <p>This is equivalent to <code>GET /s1/sentiment?text=There%20is%20no%20harm...</code></p>
 
-    <h2>Request limitations</h2>
+    <h3>Request limitations</h3>
     <p>
         The API has other limitations concerning the size of the HTTP requests. The maximum allowed size of any
         POST request body is <em>512 KiB</em>. For request with a URL resource, the maximum allowed number of
         extracted characters from each such resource is <em>100,000</em>.
     </p>
 
-    <h2>Terms of Service</h2>
+    <h3>Terms of Service</h3>
     <p>
         By using the API, you agree to our
         <a href="https://www.geneea.com/terms.html" target="_blank">Terms of Service Agreement</a>.
     </p>
 
-    <h2>More information</h2>
+    <h3>More information</h3>
     <p>
         <a href="https://help.geneea.com/index.html" target="_blank">
         The Interpretor Public Documentation
         </a>
     </p>
 </div>
-
 
 ## Authorization
 
@@ -99,119 +98,107 @@ Supported authorization schemes:
 ## Actions
 
 ### Information about current user account
-
-> getInfo
+> getInfo<br/>
 
 *Tags:* `account`
 
 ### Performs text correction (diacritization) on the given document
-
-> <br/><strong>Possible options:</strong><p class="markdown">An optional parameter <code>diacritize</code> with values <code>yes</code>, <code>no</code> or <code>auto</code> indicate whether the text diacritization will be performed. The default value is <code>auto</code>.</p>
+<blockquote><br/><strong>Possible options:</strong><p class="markdown">An optional parameter <code>diacritize</code> with values <code>yes</code>, <code>no</code> or <code>auto</code> indicate whether the text diacritization will be performed. The default value is <code>auto</code>.</p></blockquote>
 
 *Tags:* `geneea-api-s1`
 
 #### Input Parameters
-* `id` - _optional_ - document ID
-* `text` - _optional_ - raw document text
-* `url` - _optional_ - document URL
-* `extractor` - _optional_ - document extractor
+* `id` - _optional_ - document ID<br/>
+* `text` - _optional_ - raw document text<br/>
+* `url` - _optional_ - document URL<br/>
+* `extractor` - _optional_ - document extractor<br/>
     Possible values: default, article, keep-everything.
-* `language` - _optional_ - document language
+* `language` - _optional_ - document language<br/>
 * `returnTextInfo` - _optional_
 
 ### Performs text correction (diacritization) on the given document
-
-> <strong>Notes:</strong><br/>Valid JSON cannot contain newline characters. These have to be escaped. (See also <a href="https://geneea.atlassian.net/wiki/display/IPD/The+Interpretor+API+Public+Documentation#TheInterpretorAPIPublicDocumentation-Interactiveonlinedocumentation" target="_blank">Interpretor documentation</a>)<br/>Fields <code>text</code> and <code>url</code> are mutually exclusive.<br/><strong>Examples:</strong><pre><code>{"text": "Hello world!"}</code></pre><pre><code>{"url": "https://en.wikipedia.org/wiki/Pyrrhuloxia"}</code></pre><br/><strong>Possible options:</strong><p class="markdown">An optional parameter <code>diacritize</code> with values <code>yes</code>, <code>no</code> or <code>auto</code> indicate whether the text diacritization will be performed. The default value is <code>auto</code>.</p>
+<blockquote><strong>Notes:</strong><br/>Valid JSON cannot contain newline characters. These have to be escaped. (See also <a href="https://geneea.atlassian.net/wiki/display/IPD/The+Interpretor+API+Public+Documentation#TheInterpretorAPIPublicDocumentation-Interactiveonlinedocumentation" target="_blank">Interpretor documentation</a>)<br/>Fields <code>text</code> and <code>url</code> are mutually exclusive.<br/><strong>Examples:</strong><pre><code>{"text": "Hello world!"}</code></pre><pre><code>{"url": "https://en.wikipedia.org/wiki/Pyrrhuloxia"}</code></pre><br/><strong>Possible options:</strong><p class="markdown">An optional parameter <code>diacritize</code> with values <code>yes</code>, <code>no</code> or <code>auto</code> indicate whether the text diacritization will be performed. The default value is <code>auto</code>.</p></blockquote>
 
 *Tags:* `geneea-api-s1`
 
 ### Performs named-entity recognition on the given document
-
-> entitiesGet
+> entitiesGet<br/>
 
 *Tags:* `geneea-api-s1`
 
 #### Input Parameters
-* `id` - _optional_ - document ID
-* `text` - _optional_ - raw document text
-* `url` - _optional_ - document URL
-* `extractor` - _optional_ - document extractor
+* `id` - _optional_ - document ID<br/>
+* `text` - _optional_ - raw document text<br/>
+* `url` - _optional_ - document URL<br/>
+* `extractor` - _optional_ - document extractor<br/>
     Possible values: default, article, keep-everything.
-* `language` - _optional_ - document language
+* `language` - _optional_ - document language<br/>
 * `returnTextInfo` - _optional_
 
 ### Performs named-entity recognition on the given document
-
-> <strong>Notes:</strong><br/>Valid JSON cannot contain newline characters. These have to be escaped. (See also <a href="https://geneea.atlassian.net/wiki/display/IPD/The+Interpretor+API+Public+Documentation#TheInterpretorAPIPublicDocumentation-Interactiveonlinedocumentation" target="_blank">Interpretor documentation</a>)<br/>Fields <code>text</code> and <code>url</code> are mutually exclusive.<br/><strong>Examples:</strong><pre><code>{"text": "Hello world!"}</code></pre><pre><code>{"url": "https://en.wikipedia.org/wiki/Pyrrhuloxia"}</code></pre>
+<blockquote><strong>Notes:</strong><br/>Valid JSON cannot contain newline characters. These have to be escaped. (See also <a href="https://geneea.atlassian.net/wiki/display/IPD/The+Interpretor+API+Public+Documentation#TheInterpretorAPIPublicDocumentation-Interactiveonlinedocumentation" target="_blank">Interpretor documentation</a>)<br/>Fields <code>text</code> and <code>url</code> are mutually exclusive.<br/><strong>Examples:</strong><pre><code>{"text": "Hello world!"}</code></pre><pre><code>{"url": "https://en.wikipedia.org/wiki/Pyrrhuloxia"}</code></pre></blockquote>
 
 *Tags:* `geneea-api-s1`
 
 ### Performs lemmatization on the given document
-
-> lemmatizeGet
+> lemmatizeGet<br/>
 
 *Tags:* `geneea-api-s1`
 
 #### Input Parameters
-* `id` - _optional_ - document ID
-* `text` - _optional_ - raw document text
-* `url` - _optional_ - document URL
-* `extractor` - _optional_ - document extractor
+* `id` - _optional_ - document ID<br/>
+* `text` - _optional_ - raw document text<br/>
+* `url` - _optional_ - document URL<br/>
+* `extractor` - _optional_ - document extractor<br/>
     Possible values: default, article, keep-everything.
-* `language` - _optional_ - document language
+* `language` - _optional_ - document language<br/>
 * `returnTextInfo` - _optional_
 
 ### Performs lemmatization on the given document
-
-> <strong>Notes:</strong><br/>Valid JSON cannot contain newline characters. These have to be escaped. (See also <a href="https://geneea.atlassian.net/wiki/display/IPD/The+Interpretor+API+Public+Documentation#TheInterpretorAPIPublicDocumentation-Interactiveonlinedocumentation" target="_blank">Interpretor documentation</a>)<br/>Fields <code>text</code> and <code>url</code> are mutually exclusive.<br/><strong>Examples:</strong><pre><code>{"text": "Hello world!"}</code></pre><pre><code>{"url": "https://en.wikipedia.org/wiki/Pyrrhuloxia"}</code></pre>
+<blockquote><strong>Notes:</strong><br/>Valid JSON cannot contain newline characters. These have to be escaped. (See also <a href="https://geneea.atlassian.net/wiki/display/IPD/The+Interpretor+API+Public+Documentation#TheInterpretorAPIPublicDocumentation-Interactiveonlinedocumentation" target="_blank">Interpretor documentation</a>)<br/>Fields <code>text</code> and <code>url</code> are mutually exclusive.<br/><strong>Examples:</strong><pre><code>{"text": "Hello world!"}</code></pre><pre><code>{"url": "https://en.wikipedia.org/wiki/Pyrrhuloxia"}</code></pre></blockquote>
 
 *Tags:* `geneea-api-s1`
 
 ### Performs sentiment analysis on the given document
-
-> sentimentGet
+> sentimentGet<br/>
 
 *Tags:* `geneea-api-s1`
 
 #### Input Parameters
-* `id` - _optional_ - document ID
-* `text` - _optional_ - raw document text
-* `url` - _optional_ - document URL
-* `extractor` - _optional_ - document extractor
+* `id` - _optional_ - document ID<br/>
+* `text` - _optional_ - raw document text<br/>
+* `url` - _optional_ - document URL<br/>
+* `extractor` - _optional_ - document extractor<br/>
     Possible values: default, article, keep-everything.
-* `language` - _optional_ - document language
+* `language` - _optional_ - document language<br/>
 * `returnTextInfo` - _optional_
 
 ### Performs sentiment analysis on the given document
-
-> <strong>Notes:</strong><br/>Valid JSON cannot contain newline characters. These have to be escaped. (See also <a href="https://geneea.atlassian.net/wiki/display/IPD/The+Interpretor+API+Public+Documentation#TheInterpretorAPIPublicDocumentation-Interactiveonlinedocumentation" target="_blank">Interpretor documentation</a>)<br/>Fields <code>text</code> and <code>url</code> are mutually exclusive.<br/><strong>Examples:</strong><pre><code>{"text": "Hello world!"}</code></pre><pre><code>{"url": "https://en.wikipedia.org/wiki/Pyrrhuloxia"}</code></pre>
+<blockquote><strong>Notes:</strong><br/>Valid JSON cannot contain newline characters. These have to be escaped. (See also <a href="https://geneea.atlassian.net/wiki/display/IPD/The+Interpretor+API+Public+Documentation#TheInterpretorAPIPublicDocumentation-Interactiveonlinedocumentation" target="_blank">Interpretor documentation</a>)<br/>Fields <code>text</code> and <code>url</code> are mutually exclusive.<br/><strong>Examples:</strong><pre><code>{"text": "Hello world!"}</code></pre><pre><code>{"url": "https://en.wikipedia.org/wiki/Pyrrhuloxia"}</code></pre></blockquote>
 
 *Tags:* `geneea-api-s1`
 
 ### Performs topic detection on the given document
-
-> topicGet
+> topicGet<br/>
 
 *Tags:* `geneea-api-s1`
 
 #### Input Parameters
-* `id` - _optional_ - document ID
-* `text` - _optional_ - raw document text
-* `url` - _optional_ - document URL
-* `extractor` - _optional_ - document extractor
+* `id` - _optional_ - document ID<br/>
+* `text` - _optional_ - raw document text<br/>
+* `url` - _optional_ - document URL<br/>
+* `extractor` - _optional_ - document extractor<br/>
     Possible values: default, article, keep-everything.
-* `language` - _optional_ - document language
+* `language` - _optional_ - document language<br/>
 * `returnTextInfo` - _optional_
 
 ### Performs topic detection on the given document
-
-> <strong>Notes:</strong><br/>Valid JSON cannot contain newline characters. These have to be escaped. (See also <a href="https://geneea.atlassian.net/wiki/display/IPD/The+Interpretor+API+Public+Documentation#TheInterpretorAPIPublicDocumentation-Interactiveonlinedocumentation" target="_blank">Interpretor documentation</a>)<br/>Fields <code>text</code> and <code>url</code> are mutually exclusive.<br/><strong>Examples:</strong><pre><code>{"text": "Hello world!"}</code></pre><pre><code>{"url": "https://en.wikipedia.org/wiki/Pyrrhuloxia"}</code></pre>
+<blockquote><strong>Notes:</strong><br/>Valid JSON cannot contain newline characters. These have to be escaped. (See also <a href="https://geneea.atlassian.net/wiki/display/IPD/The+Interpretor+API+Public+Documentation#TheInterpretorAPIPublicDocumentation-Interactiveonlinedocumentation" target="_blank">Interpretor documentation</a>)<br/>Fields <code>text</code> and <code>url</code> are mutually exclusive.<br/><strong>Examples:</strong><pre><code>{"text": "Hello world!"}</code></pre><pre><code>{"url": "https://en.wikipedia.org/wiki/Pyrrhuloxia"}</code></pre></blockquote>
 
 *Tags:* `geneea-api-s1`
 
 ### Gets status of the Interpretor service
-
-> status
+> status<br/>
 
 *Tags:* `status-api`
 
